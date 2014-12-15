@@ -1,0 +1,33 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Spring Demo</display-name>
+
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/resource/applicationContext.xml</param-value>
+	</context-param>
+
+	<!-- 用于加载上下文的监听器 加载spring容器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	
+	
+	<!-- servlet映射web交互处理 -->
+	<servlet>
+	   <servlet-name>webServlet</servlet-name>
+	   <servlet-class>org.springframeswork.web.servlet.DispacherServlet</servlet-class>
+	   <init-param>
+	       <param-name>contextConfigLocation</param-name>
+	       <param-value>/WEB-INF/resource/servlet-context.xml</param-value>
+	   </init-param>
+	   <load-on-startup>1</load-on-startup>
+	</servlet>
+	
+	<welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+</web-app>
