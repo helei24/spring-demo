@@ -16,6 +16,11 @@
 		<spring-security.version>3.1.4.RELEASE</spring-security.version>
 		<spring-jpa.version>1.4.3.RELEASE</spring-jpa.version>
 		<spring-hateoas.version>0.8.0.RELEASE</spring-hateoas.version>
+        
+        <!-- Hibernate -->
+        <ijcommons-hibernate.version>1.4.1</ijcommons-hibernate.version>
+        <hibernate.version>4.3.4.Final</hibernate.version>
+        <hibernate-validator.version>5.0.2.Final</hibernate-validator.version>
 
 		<!-- Database -->
 		<mysql-connector.version>5.1.30</mysql-connector.version>
@@ -100,6 +105,11 @@
 			<artifactId>spring-web</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
+		 <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-expression</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-beans</artifactId>
@@ -148,7 +158,29 @@
 			<artifactId>spring-hateoas</artifactId>
 			<version>${spring-hateoas.version}</version>
 		</dependency>
-
+        
+        <!-- Hibernate -->
+        <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-ehcache</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-core</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-entitymanager</artifactId>
+                <version>${hibernate.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-validator</artifactId>
+                <version>${hibernate-validator.version}</version>
+            </dependency>
+        
 		<!-- Database -->
 		<dependency>
 			<groupId>mysql</groupId>
@@ -300,6 +332,9 @@
 			<properties>
 				<environmentClassifier>dbunit</environmentClassifier>
 			</properties>
+			<activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
 		</profile>
 		<profile>
 			<id>mysql</id>

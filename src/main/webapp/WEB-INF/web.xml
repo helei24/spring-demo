@@ -19,13 +19,18 @@
 	<!-- servlet映射web交互处理 -->
 	<servlet>
 	   <servlet-name>webServlet</servlet-name>
-	   <servlet-class>org.springframeswork.web.servlet.DispacherServlet</servlet-class>
+	   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 	   <init-param>
 	       <param-name>contextConfigLocation</param-name>
 	       <param-value>/WEB-INF/resource/servlet-context.xml</param-value>
 	   </init-param>
 	   <load-on-startup>1</load-on-startup>
 	</servlet>
+	
+	<servlet-mapping>
+        <servlet-name>webServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 	
 	<welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
