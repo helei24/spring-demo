@@ -15,7 +15,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Example;
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 public abstract class GenericDaoHibernate<T, ID extends Serializable> extends HibernateDaoSupport
         implements GenericDao<T, ID> {

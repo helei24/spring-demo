@@ -1,14 +1,9 @@
 package com.stone.dao;
 
-import java.util.List;
-
+import com.stone.common.hibernate.GenericDao;
 import com.stone.domain.User;
 
-public interface UserDao {
-
-    public User findUserById(int id);
+public interface UserDao extends GenericDao<User, Long> {
 
     public User findUserByName(String name);
-
-    public List<User> findAllUser();
 }
