@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<context:component-scan base-package="com.stone.dao">
+		<context:include-filter type="regex" expression="com.stone.dao.impl" />
+	</context:component-scan>
+
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
+		lazy-init="true">
+		<property name="dataSource" ref="daoDataSource" />
+		<property name="hibernateProperties" ref="testHibbernateProperties" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.stone.domain</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="abstractDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close" lazy-init="true" abstract="true">
+		<property name="driverClass">
+			<value>${springDemo.driver}</value>
+		</property>
+		<property name="user">
+			<value>${springDemo.user}</value>
+		</property>
+		<property name="password">
+			<value>${springDemo.pass}</value>
+		</property>
+	</bean>
+
+	<bean id="daoDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close"
+		lazy-init="true" parent="abstractDataSource">
+		<property name="jdbcUrl">
+			<value>${springDemo.url}</value>
+		</property>
+	</bean>
+
+</beans>
