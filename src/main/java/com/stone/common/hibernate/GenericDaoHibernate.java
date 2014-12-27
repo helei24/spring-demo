@@ -3,19 +3,18 @@ package com.stone.common.hibernate;
 import static com.stone.common.lang.Validators.ia;
 import static java.lang.String.format;
 
-import java.io.Serializable;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.List;
-
-import javax.annotation.Resource;
-
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Example;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
+import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
+
+import java.io.Serializable;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.List;
+import javax.annotation.Resource;
 
 public abstract class GenericDaoHibernate<T, ID extends Serializable> extends HibernateDaoSupport
         implements GenericDao<T, ID> {

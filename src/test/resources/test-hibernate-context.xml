@@ -5,19 +5,19 @@
     <bean id="hsqlHibernateProperties" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
         <property name="properties">
             <props>
-                <prop key="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</prop>
-                <prop key="hibernate.hbm2ddl.auto">create</prop>
-                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLdialect</prop>
-                <prop key="hibernate.show_sql">true</prop>
-                <prop key="hibernate.format_sql">true</prop>
-                <prop key="hibernate.connection.useUnicode">true</prop>
-                <prop key="hibernate.connection.characterEncoding">UTF-8</prop>
-                <prop key="hibernate.c3p0.timeout">0</prop>
-                <prop key="hibernate.c3p0.max_size">1</prop>
-                <prop key="hibernate.c3p0.min_size">1</prop>
+				<prop key="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.format_sql">true</prop>
+				<prop key="hibernate.connection.useUnicode">true</prop>
+				<prop key="hibernate.connection.characterEncoding">UTF-8</prop>
+				<prop key="hibernate.c3p0.timeout">0</prop>
+				<prop key="hibernate.c3p0.max_size">1</prop>
+				<prop key="hibernate.c3p0.min_size">1</prop>
             </props>
         </property>
     </bean>
     
-    <alias name="hsqlHibernateProperties" alias="testHibbernateProperties"/>
+    <alias name="hsqlHibernateProperties" alias="testHibernateProperties"/>
 </beans>

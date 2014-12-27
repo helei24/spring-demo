@@ -2,15 +2,16 @@ package com.stone.dao.impl;
 
 import static com.stone.common.lang.ListUtils.getFirstOrNull;
 
-import java.util.List;
-
-import org.hibernate.criterion.DetachedCriteria;
-import org.hibernate.criterion.Restrictions;
-
 import com.stone.common.hibernate.GenericDaoHibernate;
 import com.stone.dao.UserDao;
 import com.stone.domain.User;
+import org.hibernate.criterion.DetachedCriteria;
+import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Component;
 
+import java.util.List;
+
+@Component
 public class UserDaoImpl extends GenericDaoHibernate<User, Long> implements UserDao {
 
     @Override

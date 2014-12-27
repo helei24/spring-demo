@@ -6,19 +6,19 @@
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<context:component-scan base-package="com.stone.dao">
-		<context:include-filter type="regex" expression="com.stone.dao.impl" />
+		<context:include-filter type="regex" expression="com.stone.dao.impl.*" />
 	</context:component-scan>
 
 
-	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean"
-		lazy-init="true">
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="daoDataSource" />
-		<property name="hibernateProperties" ref="testHibbernateProperties" />
+		<property name="hibernateProperties" ref="testHibernateProperties" />
 		<property name="packagesToScan">
 			<list>
 				<value>com.stone.domain</value>
 			</list>
 		</property>
+
 	</bean>
 
 	<bean id="abstractDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"

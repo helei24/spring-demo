@@ -1,9 +1,9 @@
 package com.stone.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 @Entity(name = "user")
 public class User extends AbstractDomainObject {
@@ -11,10 +11,10 @@ public class User extends AbstractDomainObject {
     private static final long serialVersionUID = 1971806339120949315L;
 
     @JsonProperty("username")
-    @JoinColumn(name = "name")
+    @Column(name = "name")
     private String name;
 
-    @JoinColumn(name = "password")
+    @Column(name = "password")
     private String password;
 
     public String getName() {
