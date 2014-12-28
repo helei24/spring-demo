@@ -5,14 +5,11 @@
     http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
     http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
-	<context:component-scan base-package="com.stone.dao">
-		<context:include-filter type="regex" expression="com.stone.dao.impl.*" />
-	</context:component-scan>
-
+	<context:component-scan base-package="com.stone.dao"/>
 
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
 		<property name="dataSource" ref="daoDataSource" />
-		<property name="hibernateProperties" ref="testHibernateProperties" />
+		<property name="hibernateProperties" ref="hibernateProperties" />
 		<property name="packagesToScan">
 			<list>
 				<value>com.stone.domain</value>

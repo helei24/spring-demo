@@ -14,6 +14,7 @@
 	<!-- MVC注解驱动 -->
 	<annotation-driven />
 
+
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources 
 		directory -->
 	<resources mapping="/resources/**" location="/static/" />
@@ -25,10 +26,10 @@
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="redirectHttp10Compatible" value="false" />
 	</beans:bean>
-	
+
 	<!-- 扫描controller包 -->
 	<context:component-scan base-package="com.stone.controller">
-       <!--  <context:exclude-filter type="annotation"
-                                expression="org.springframework.stereotype.Service"/> -->
+         <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Service"/>
     </context:component-scan>
 </beans:beans>

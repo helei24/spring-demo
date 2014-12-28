@@ -19,5 +19,5 @@
         </property>
     </bean>
     
-    <alias name="hsqlHibernateProperties" alias="testHibernateProperties"/>
+    <alias name="hsqlHibernateProperties" alias="hibernateProperties"/>
 </beans>

@@ -13,8 +13,6 @@
 	<import resource="classpath:test-hibernate-context.xml" />
 	<import resource="classpath:dao-context.xml" />
 
-	<!--<jdbc:embedded-database id="daoDataSource" />-->
-    
     <jdbc:initialize-database data-source="daoDataSource">
         <jdbc:script location="classpath:/com/stone/dao/UserDaoTest-data.sql"/>
     </jdbc:initialize-database>

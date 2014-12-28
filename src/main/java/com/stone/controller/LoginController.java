@@ -1,25 +1,38 @@
 package com.stone.controller;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
+import com.stone.domain.User;
+import com.stone.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class LoginController {
 
-    @RequestMapping(value = "/login", method = GET)
-    public String toLogin() {
+  @Autowired
+//  @Qualifier("userServiceImpl")
+  UserService userService;
 
-        return "login";
+  @RequestMapping(value = {"", "/", "/login"}, method = GET)
+  public String toLogin() {
+
+    return "login";
+  }
+
+  @RequestMapping(value = "/login", method = POST)
+  public String toIndex(HttpServletRequest request, @ModelAttribute User user) {
+
+
+    if(userService.validateUser(user)){
+      return "index";
     }
+    return "login";
+  }
 
-    @RequestMapping(value = { "", "/", "/index" }, method = GET)
-    public String toIndex(HttpServletRequest request) {
-
-        System.out.println("s");
-        return "index";
-    }
 }

@@ -1,13 +1,14 @@
 package com.stone.service.impl;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.stone.dao.UserDao;
 import com.stone.domain.User;
 import com.stone.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service("userServiceImpl")
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -31,4 +32,10 @@ public class UserServiceImpl implements UserService {
         return userDao.findAll();
     }
 
+  @Override
+  public boolean validateUser(User user) {
+
+    List<User> users = userDao.findByExample(user);
+    return !users.isEmpty();
+  }
 }

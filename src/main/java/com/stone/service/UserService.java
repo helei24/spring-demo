@@ -1,8 +1,8 @@
 package com.stone.service;
 
-import java.util.List;
-
 import com.stone.domain.User;
+
+import java.util.List;
 
 public interface UserService {
 
@@ -11,4 +11,6 @@ public interface UserService {
     public User findUserByName(String name);
 
     public List<User> findAllUser();
+
+  boolean validateUser(User user);
 }
