@@ -1,7 +1,6 @@
-package com.stone.dao;
+package com.stone.authentication.dao;
 
 import com.stone.common.hibernate.GenericDao;
-import com.stone.domain.User;
 
 public interface UserDao extends GenericDao<User, Long> {
 

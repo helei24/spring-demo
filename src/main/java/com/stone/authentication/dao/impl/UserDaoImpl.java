@@ -1,4 +1,4 @@
-package com.stone.dao.impl;
+package com.stone.authentication.dao.impl;
 
 import static com.stone.common.lang.ListUtils.getFirstOrNull;
 
